@@ -5,19 +5,19 @@ import java.util.LinkedHashMap;
 import java.util.Map;
 import java.util.Scanner;
 
-public class StringCompression {
+public class MaxRecurringSymbol {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         System.out.println("Введите фразу или слово: ");
         String myMessage = scanner.nextLine();
 
-        System.out.println(myCompressor(myMessage));
-
+        System.out.println("Самый повторяющийся символ - " + maxRecurringSymbol(myMessage));
     }
-    private static String myCompressor(String userMessage){
-        Map<Character,Integer> messageMap = new LinkedHashMap<>();
+    private static Character maxRecurringSymbol(String userMessage){
+        Map<Character,Integer> messageMap = new HashMap();
         int someNum;
-        String myString = "";
+        int maxNum = 0;
+        Character maxCountSymbol = ' ';
 
         for (Character j: userMessage.toCharArray()){
             if(messageMap.containsKey(j)){
@@ -27,15 +27,12 @@ public class StringCompression {
                 messageMap.put(j,1);
             }
         }
-
-        for (Object i: messageMap.keySet()){
-            myString = myString + i + messageMap.get(i);
+        for(Character i: messageMap.keySet()){
+            if (messageMap.get(i) > maxNum){
+                maxCountSymbol = i;
+                maxNum = messageMap.get(i);
+            }
         }
-
-        if(myString.length() <= userMessage.length()){
-            return myString;
-        }else{
-            return userMessage;
-        }
+        return maxCountSymbol;
     }
 }
