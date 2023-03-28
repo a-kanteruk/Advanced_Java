@@ -6,12 +6,9 @@ public class Animal{
     String name;
 
     public static void main(String[] args) {
-        Dog dog = new Dog("Spike", 40);
-        Cat cat = new Cat("Luci", 6);
+        Animal dog = new Dog("Spike", 40);
+        Animal cat = new Cat("Luci", 6);
         Animal cat2 = new Cat("Lindy", 3);
-
-        cat.meow();
-        dog.bark();
 
         dog.showInfo();
         cat.showInfo();

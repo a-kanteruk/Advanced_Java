@@ -6,16 +6,16 @@ public class CountTwo {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         System.out.println("Input your number: ");
-        int userNumber = scanner.nextInt();
+        Integer userNumber = scanner.nextInt();
 
-        myCount(userNumber);
+        countNumber(userNumber);
     }
-    private static void myCount(int userNumber){
+    private static void countNumber(int userNumber){
         Integer num;
         String str;
         int counter = 0;
 
-        for (int i = 0; i < userNumber; i++){
+        for (int i = 0; i <= userNumber; i++){
             num = i;
             str = num.toString();
             for (Character j: str.toCharArray()){

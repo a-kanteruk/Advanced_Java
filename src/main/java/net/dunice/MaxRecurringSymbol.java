@@ -10,9 +10,9 @@ public class MaxRecurringSymbol {
         System.out.println("Введите фразу или слово: ");
         String myMessage = scanner.nextLine();
 
-        System.out.println("Самый повторяющийся символ - " + maxRecurringSymbol(myMessage));
+        System.out.println("Самый повторяющийся символ - " + selectSymbol(myMessage));
     }
-    private static Character maxRecurringSymbol(String userMessage){
+    private static Character selectSymbol(String userMessage){
         Map<Character,Integer> messageMap = new HashMap();
         int someNum;
         int maxNum = 0;

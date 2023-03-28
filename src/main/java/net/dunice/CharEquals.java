@@ -12,12 +12,12 @@ public class CharEquals {
         System.out.println("Введите вторую фразу.");
         String secondMessage = scanner.nextLine();
 
-        Map firstMap = myEquals(message);
-        Map secondMap = myEquals(secondMessage);
+        Map firstMap = checkPhrase(message);
+        Map secondMap = checkPhrase(secondMessage);
 
         System.out.println(firstMap.equals(secondMap)?"Yes":"No");
     }
-    private static Map myEquals(String userMessage){
+    private static Map checkPhrase(String userMessage){
         Map<Character,Integer> messageMap = new HashMap();
         int someNum;
 

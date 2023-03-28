@@ -12,11 +12,11 @@ public class UniqueList {
         myCollection.add("Artem");
         System.out.println(myCollection);
 
-        myCollection =unique.uniqueElements(myCollection);
+        myCollection =unique.selection(myCollection);
         System.out.println(myCollection);
 
     }
-    public Collection uniqueElements(Collection someCollections){
+    public Collection selection(Collection someCollections){
         HashSet mySet = new HashSet();
         for (Object item: someCollections) mySet.add(item);
         someCollections.clear();

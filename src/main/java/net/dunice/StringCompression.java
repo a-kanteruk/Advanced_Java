@@ -10,10 +10,10 @@ public class StringCompression {
         System.out.println("Введите фразу или слово: ");
         String myMessage = scanner.nextLine();
 
-        System.out.println(myCompressor(myMessage));
+        System.out.println(compressString(myMessage));
 
     }
-    private static String myCompressor(String userMessage){
+    private static String compressString(String userMessage){
         Map<Character,Integer> messageMap = new LinkedHashMap<>();
         int someNum;
         String myString = "";

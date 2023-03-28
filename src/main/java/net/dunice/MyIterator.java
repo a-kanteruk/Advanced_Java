@@ -5,10 +5,10 @@ public class MyIterator {
         int[] myArray = {1, 2, 3, 4, 5, 6, 7};
         MyIterator someIterator = new MyIterator();
 
-        someIterator.myIterator(myArray);
+        someIterator.iterate(myArray);
 
     }
-    public void myIterator(int[] someArray){
+    public void iterate(int[] someArray){
         int counter = 0;
         while(counter < someArray.length){
             System.out.println(someArray[counter]);

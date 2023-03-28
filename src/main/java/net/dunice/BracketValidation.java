@@ -8,9 +8,9 @@ public class BracketValidation {
         System.out.println("Введите фразу или слово: ");
         String myMessage = scanner.nextLine();
 
-        System.out.println(bracketValidation(myMessage));
+        System.out.println(isBracketValid(myMessage));
     }
-    private static boolean bracketValidation(String userMessage){
+    private static boolean isBracketValid(String userMessage){
         int validationNum = 0;
 
         for (Character i : userMessage.toCharArray()){

@@ -9,9 +9,9 @@ public class BracketInsertion {
         System.out.println("Введите фразу или слово: ");
         String myMessage = scanner.nextLine();
 
-        bracketInsertion(myMessage);
+        insertBrackets(myMessage);
     }
-    private static void bracketInsertion(String someMessage) {
+    private static void insertBrackets(String someMessage) {
         char[] message = someMessage.toCharArray();
         String newMessage = "";
         if (message.length % 2 == 1) {
