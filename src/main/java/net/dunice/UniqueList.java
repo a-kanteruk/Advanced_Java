@@ -1,30 +1,26 @@
 package net.dunice;
 
-import java.util.ArrayList;
-import java.util.HashSet;
-import java.util.List;
+import java.util.*;
 
 public class UniqueList {
-    HashSet mySet = new HashSet();
     public static void main(String[] args) {
-        List<String> someList = new ArrayList<>();
+        Collection myCollection = new ArrayList<>();
         UniqueList unique = new UniqueList();
 
-        someList.add("Artem");
-        someList.add("Artur");
-        someList.add("Artem");
-        System.out.println(someList);
+        myCollection.add("Artem");
+        myCollection.add("Artur");
+        myCollection.add("Artem");
+        System.out.println(myCollection);
 
-        someList = unique.uniqueElements(someList);
-        System.out.println(someList);
+        myCollection =unique.uniqueElements(myCollection);
+        System.out.println(myCollection);
 
     }
-    public List uniqueElements(List someCollections){
-
-        for (Object item: someCollections){mySet.add(item);}
+    public Collection uniqueElements(Collection someCollections){
+        HashSet mySet = new HashSet();
+        for (Object item: someCollections) mySet.add(item);
         someCollections.clear();
-        for (Object item: mySet){someCollections.add(item);}
-        mySet.clear();
+        for (Object item: mySet) someCollections.add(item);
 
         return someCollections;
     }
