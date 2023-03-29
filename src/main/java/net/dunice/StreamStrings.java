@@ -2,7 +2,6 @@ package net.dunice;
 
 import java.util.Arrays;
 import java.util.List;
-import java.util.stream.Stream;
 
 public class StreamStrings {
     public static void main(String[] args) {
@@ -15,7 +14,8 @@ public class StreamStrings {
         myList.stream().map(item -> item + "_1").forEach(System.out::println);
 
         System.out.println("Вывод коллекции преобразованной в массив чисел: ");
-        int[] myArray = myList.stream().map(item -> item.replace("a","")).mapToInt(Integer::parseInt).toArray();
+        int[] myArray = myList.stream().map(item -> item.replace("a",""))
+                                        .mapToInt(Integer::parseInt).toArray();
         Arrays.stream(myArray).forEach(System.out::println);
 
         System.out.println("Вывод отсортированной коллекции без дубликатов: ");
