@@ -12,15 +12,12 @@ public class IdenticalPairs {
         int num;
         int counter = 0;
         for (int i = 0; i < someArray.length; i++){
-            if (myMap.containsKey(someArray[i])){
-                num = myMap.get(someArray[i]) + 1;
-                myMap.put(someArray[i], num);
-            }else{
-                myMap.put(someArray[i], 1);
+            num = someArray[i];
+            for(int j = 0; j < someArray.length; j++){
+                if(someArray[j] == num && i < j){
+                    counter++;
+                }
             }
-        }
-        for (Integer i: myMap.values()){
-            counter += i / 2;
         }
         return counter;
     }

@@ -12,7 +12,6 @@ public class Animal{
 
         dog.showInfo();
         cat.showInfo();
-
         cat2.showInfo();
         }
 
@@ -45,5 +44,3 @@ class Cat extends Animal{
         System.out.println("Мяу, Мяу!");
     }
 }
-
-

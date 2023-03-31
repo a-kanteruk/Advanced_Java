@@ -1,6 +1,7 @@
 package net.dunice;
 
 import java.util.HashMap;
+import java.util.LinkedHashMap;
 import java.util.Map;
 import java.util.Scanner;
 
@@ -13,7 +14,7 @@ public class MaxRecurringSymbol {
         System.out.println("Самый повторяющийся символ - " + selectSymbol(myMessage));
     }
     private static Character selectSymbol(String userMessage){
-        Map<Character,Integer> messageMap = new HashMap();
+        Map<Character,Integer> messageMap = new LinkedHashMap<>();
         int someNum;
         int maxNum = 0;
         Character maxCountSymbol = ' ';

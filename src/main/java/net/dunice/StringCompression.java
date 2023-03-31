@@ -15,22 +15,23 @@ public class StringCompression {
     }
     private static String compressString(String userMessage){
         Map<Character,Integer> messageMap = new LinkedHashMap<>();
-        int someNum;
+        int someNum = 0;
+        char[] someArray = userMessage.toCharArray();
         String myString = "";
 
-        for (Character j: userMessage.toCharArray()){
-            if(messageMap.containsKey(j)){
-                someNum = messageMap.get(j) + 1;
-                messageMap.put(j,someNum);
+        for (int i = 0; i < someArray.length; i++){
+            if(i == 0){
+                myString += someArray[i];
+                someNum++;
+            }else if (i != 0 && someArray[i] == someArray[i-1]){
+                someNum++;
             }else{
-                messageMap.put(j,1);
+                myString += someNum;
+                myString += someArray[i];
+                someNum = 1;
             }
         }
-
-        for (Object i: messageMap.keySet()){
-            myString = myString + i + messageMap.get(i);
-        }
-
+        myString += someNum;
         if(myString.length() <= userMessage.length()){
             return myString;
         }else{

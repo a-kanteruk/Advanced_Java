@@ -10,6 +10,7 @@ public class SpaceCompression {
 
         System.out.println(compressSpaces(myString));
     }
+
     private static String compressSpaces(String someString){
         char[] charArray = someString.toCharArray();
         String newString = "" + charArray[0];
@@ -22,5 +23,4 @@ public class SpaceCompression {
         }
         return newString;
     }
-
 }
