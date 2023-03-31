@@ -7,40 +7,40 @@ import java.util.stream.Collectors;
 
 public class EmployeesComparator {
     public static void main(String[] args) {
-        List<Employee> employersList= new ArrayList<>();
-        employersList.add(new Employee("Genry",28,80000, 1));
-        employersList.add(new Employee("Mich",33,90000, 3));
-        employersList.add(new Employee("Jimm",54,120000, 4));
+        List<Employee> employeesList= new ArrayList<>();
+        employeesList.add(new Employee("Genry",28,80000, 1));
+        employeesList.add(new Employee("Mich",33,90000, 3));
+        employeesList.add(new Employee("Jimm",54,120000, 4));
 
         System.out.println("Список сотрудников в алфавитном порядке: ");
-        employersList.stream()
+        employeesList.stream()
                 .sorted()
                 .forEach(System.out::println);
 
         System.out.println("\nСотрудники с зарплатой больше 100000: ");
-        employersList.stream()
-                .filter(employer -> employer.getSalary() > 100000)
+        employeesList.stream()
+                .filter(employee -> employee.getSalary() > 100000)
                 .forEach(System.out::println);
 
         System.out.println("\nСотрудник с максимальной зарплатой: ");
-        Optional<Employee> max = employersList.stream()
+        Optional<Employee> max = employeesList.stream()
                 .max(new SortBySalary());
         max.ifPresent(System.out::println);
 
         System.out.println("\nГруппировка сотрудников по имени: ");
-        Map<String, List<Employee>> myEmployers = employersList.stream()
+        Map<String, List<Employee>> myEmployees = employeesList.stream()
                 .collect(Collectors.groupingBy(Employee::getName));
-        for (Map.Entry<String,List<Employee>> item: myEmployers.entrySet()){
+        for (Map.Entry<String,List<Employee>> item: myEmployees.entrySet()){
             System.out.println(item);
         }
 
         System.out.println("\nСреднее значение зарплат всех сотрудников: ");
-        double averageSalary = employersList.stream()
+        double averageSalary = employeesList.stream()
                 .collect(Collectors.averagingInt(Employee::getSalary));
         System.out.println(averageSalary);
 
         System.out.println("\nСумма всех зарплат сотрудников: ");
-        int sumOfSalary = employersList.stream()
+        int sumOfSalary = employeesList.stream()
                 .collect(Collectors.summingInt(Employee::getSalary));
         System.out.println(sumOfSalary);
     }
@@ -63,8 +63,8 @@ class Employee implements Comparable<Employee>{
     }
 
     @Override
-    public int compareTo(Employee employer) {
-        return name.compareTo(employer.getName());
+    public int compareTo(Employee employee) {
+        return name.compareTo(employee.getName());
     }
 }
 
